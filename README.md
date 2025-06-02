@@ -1,4 +1,4 @@
-<h1 align="center">🔐 Secure Cross-VPC Service Architecture on AWS</h1>
+<h1 align="center">  Secure Cross-VPC Service Architecture on AWS</h1>
 
 <p align="center">
   Powered by VPC Endpoints & Network Load Balancers
@@ -13,6 +13,9 @@
 </p>
 
 ---
+
+## 📘 Project Summary
+
 This repo demonstrates a **secure and private architecture** for exposing services across VPCs — without relying on the public internet. Using **Interface VPC Endpoints**, **Network Load Balancers**, and **EC2**, it simulates a real-world B2B use case where a service provider exposes internal applications to a customer in a zero-trust, scalable way.
 
 > Designed to meet enterprise-grade security requirements in regulated industries like fintech, healthcare, and B2B SaaS.
@@ -29,13 +32,15 @@ This architecture reflects what you'd deploy in regulated industries or zero-tru
 
 ---
 
-##  Architecture Overview
+## 📐 Architecture Diagram
 
-![AWS VPC Endpoint Architecture - Dark Mode](architecture/network-architecture-diagram.png)
+<p align="center">
+  <img src="architecture/network-architecture-diagram.png" alt="VPC Endpoint Architecture Diagram" width="85%">
+</p>
 
 ---
 
-##  Key AWS Services Used
+##  🔧 Key AWS Services Used
 
 | Service               | Purpose                                                                |
 |-----------------------|---------------------------------------------------------------------|
@@ -52,14 +57,30 @@ This architecture reflects what you'd deploy in regulated industries or zero-tru
 
 ##  EC2 Bootstrapping
   The web server in the Service VPC is launched with a minimal `user-data` script to install Apache and serve a custom HTML welcome page.
+  <details>
+<summary>View User Data Script</summary>
 
-This is done using a lightweight user-data script at instance launch.  
+```bash
+#!/bin/bash
+sudo su
+yum update -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+echo "<html><h1> Welcome to the Web Server </h1><html>" > /var/www/html/index.html
+systemctl restart httpd
+```
+
+This is done using a lightweight user-data script at instance launch.
+📄 File:   
 You can find the script here: [View user_data_webserver.sh](real-world-projects/secure-vpc-endpoint-architecture/scripts/user_data_webserver.sh)
+
+</details>
 
 
 ---
 
-## Security Highlights
+## 🔐 Security Highlights
 
 This architecture emphasizes **secure-by-default** design through:
 
@@ -71,7 +92,8 @@ This architecture emphasizes **secure-by-default** design through:
 
 ---
 
-##   Want to try this yourself? ...  
+##   Want to try this yourself? ... 
+## 🧭 Deployment Guide
 > Follow the [📂 Step-by-Step Deployment Guide](real-world-projects/secure-vpc-endpoint-architecture/guide/steps.md)
 
 
