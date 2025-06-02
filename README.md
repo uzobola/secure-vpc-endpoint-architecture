@@ -48,7 +48,7 @@ This architecture reflects what you'd deploy in regulated industries or zero-tru
   The web server in the Service VPC is launched with a minimal `user-data` script to install Apache and serve a custom HTML welcome page.
 
 This is done using a lightweight user-data script at instance launch.  
-You can find the script here: [`scripts/user_data_webserver.sh`](scripts/user_data_webserver.sh)
+You can find the script here: [scripts/user_data_webserver.sh](scripts/user_data_webserver.sh)
 
 ---
 
