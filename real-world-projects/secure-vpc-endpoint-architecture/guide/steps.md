@@ -17,7 +17,6 @@ This guide provides clear steps to replicate the architecture in this repo. It w
 
 
 ## Phase 1: Service VPC Setup
-<details> <summary><strong>PHASE 1</strong></summary>
 
   1. **Create a Service Provider VPC**
    - CIDR block: `20.0.0.0/16`
@@ -137,7 +136,7 @@ Result: A web server EC2 instance named Webserver1 is launched and publicly acce
 
 [ Back to Top](#-step-by-step-deployment-guide)
 
-</details>
+
 ---
 
 ## Phase 2: Network Load Balancer & Endpoint Service
