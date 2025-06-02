@@ -44,12 +44,13 @@ This architecture reflects what you'd deploy in regulated industries or zero-tru
 
 ---
 
-##  EC2 Bootstrapping
+<details> <summary><strong>##  EC2 Bootstrapping</strong></summary>
   The web server in the Service VPC is launched with a minimal `user-data` script to install Apache and serve a custom HTML welcome page.
 
 This is done using a lightweight user-data script at instance launch.  
 You can find the script here: [View user_data_webserver.sh](real-world-projects/secure-vpc-endpoint-architecture/scripts/user_data_webserver.sh)
 
+</details>
 
 ---
 
@@ -65,8 +66,9 @@ This architecture emphasizes **secure-by-default** design through:
 
 ---
 
-##  Like to try your hand at this ...
-You can find the steps here: [View Step-by-Step Guide](real-world-projects/secure-vpc-endpoint-architecture/guide/steps.md)
+##   Want to try this yourself? ...  
+> Follow the [📂 Step-by-Step Deployment Guide](real-world-projects/secure-vpc-endpoint-architecture/guide/steps.md)
+
 
 It includes:
 - VPC + subnet creation
