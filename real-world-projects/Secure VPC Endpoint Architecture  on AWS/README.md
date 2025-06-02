@@ -1,9 +1,4 @@
-#  <p align="center">
-  <img src="https://img.shields.io/github/repo-size/uzobola/aws-solutions-portfolio-uzo" alt="Repo Size">
-  <img src="https://img.shields.io/github/last-commit/uzobola/aws-solutions-portfolio-uzo" alt="Last Commit">
-  <img src="https://img.shields.io/github/stars/uzobola/aws-solutions-portfolio-uzo?style=social" alt="GitHub Stars">
-</p>
-Secure Cross-VPC Service Architecture on AWS  
+#  Secure Cross-VPC Service Architecture on AWS  
 **Powered by VPC Endpoints & Network Load Balancers**
 
 ![Status](https://img.shields.io/badge/deployment-secure-brightgreen)
