@@ -1,12 +1,18 @@
-#  Secure Cross-VPC Service Architecture on AWS  
-**Powered by VPC Endpoints & Network Load Balancers**
+<h1 align="center">🔐 Secure Cross-VPC Service Architecture on AWS</h1>
 
-![Status](https://img.shields.io/badge/deployment-secure-brightgreen)
-![VPC](https://img.shields.io/badge/networking-private-orange)
-![AWS](https://img.shields.io/badge/built_on-AWS-232F3E?logo=amazon-aws&logoColor=white)
-![Architecture](https://img.shields.io/badge/type-B2B--SaaS-blueviolet)
-![Security](https://img.shields.io/badge/privacy-zero--trust-critical)
+<p align="center">
+  Powered by VPC Endpoints & Network Load Balancers
+</p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/deployment-secure-brightgreen">
+  <img src="https://img.shields.io/badge/networking-private-orange">
+  <img src="https://img.shields.io/badge/built_on-AWS-232F3E?logo=amazon-aws&logoColor=white">
+  <img src="https://img.shields.io/badge/type-B2B--SaaS-blueviolet">
+  <img src="https://img.shields.io/badge/privacy-zero--trust-critical">
+</p>
+
+---
 This repo demonstrates a **secure and private architecture** for exposing services across VPCs — without relying on the public internet. Using **Interface VPC Endpoints**, **Network Load Balancers**, and **EC2**, it simulates a real-world B2B use case where a service provider exposes internal applications to a customer in a zero-trust, scalable way.
 
 > Designed to meet enterprise-grade security requirements in regulated industries like fintech, healthcare, and B2B SaaS.
