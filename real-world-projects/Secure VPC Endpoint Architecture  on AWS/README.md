@@ -7,7 +7,7 @@
 ![Architecture](https://img.shields.io/badge/type-B2B--SaaS-blueviolet)
 ![Security](https://img.shields.io/badge/privacy-zero--trust-critical)
 
-This portfolio project demonstrates a **secure and private architecture** for exposing services across VPCs — without relying on the public internet. Using **Interface VPC Endpoints**, **Network Load Balancers**, and **EC2**, it simulates a real-world B2B use case where a service provider exposes internal applications to a customer in a zero-trust, scalable way.
+This repo demonstrates a **secure and private architecture** for exposing services across VPCs — without relying on the public internet. Using **Interface VPC Endpoints**, **Network Load Balancers**, and **EC2**, it simulates a real-world B2B use case where a service provider exposes internal applications to a customer in a zero-trust, scalable way.
 
 > Designed to meet enterprise-grade security requirements in regulated industries like fintech, healthcare, and B2B SaaS.
 
