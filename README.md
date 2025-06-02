@@ -44,13 +44,12 @@ This architecture reflects what you'd deploy in regulated industries or zero-tru
 
 ---
 
-<details> <summary><strong>##  EC2 Bootstrapping</strong></summary>
+##  EC2 Bootstrapping
   The web server in the Service VPC is launched with a minimal `user-data` script to install Apache and serve a custom HTML welcome page.
 
 This is done using a lightweight user-data script at instance launch.  
 You can find the script here: [View user_data_webserver.sh](real-world-projects/secure-vpc-endpoint-architecture/scripts/user_data_webserver.sh)
 
-</details>
 
 ---
 
