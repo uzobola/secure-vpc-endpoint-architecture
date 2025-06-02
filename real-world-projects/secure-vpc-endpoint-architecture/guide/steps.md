@@ -18,7 +18,8 @@ This guide provides clear steps to replicate the architecture in this repo. It w
 
 ## Phase 1: Service VPC Setup
 <details> <summary><strong>PHASE 1</strong></summary>
-1. **Create a Service Provider VPC**
+
+  1. **Create a Service Provider VPC**
    - CIDR block: `20.0.0.0/16`
    - Name: `Service_Network`
        - In the AWS Console, ensure your region is set to US East (N. Virginia) (us-east-1).
