@@ -5,16 +5,30 @@ This guide provides clear steps to replicate the architecture in this repo. It w
 
 > Prereqs: It'll be nice for you to have basic familiarity with the AWS Console, IAM, VPCs, and EC2 setup.
 
+<br><br>
+
 ---
+
+## 📁 Project Structure
+
+![Project Structure](screenshots/project-structure.png)
+
+
+<br><br>
+---
+
 
 ##  Table of Contents
 - [Step-by-Step Deployment Guide](#step-by-step-deployment-guide)
+  - [📁 Project Structure](#-project-structure)
+  - [](#)
   - [Table of Contents](#table-of-contents)
   - [Phase 1: Service VPC Setup](#phase-1-service-vpc-setup)
   - [Phase 2: Network Load Balancer \& Endpoint Service](#phase-2-network-load-balancer--endpoint-service)
   - [Phase 3: Customer VPC Setup](#phase-3-customer-vpc-setup)
   - [Phase 4: VPC Endpoint in the Customer VPC \& Test for Connectivity](#phase-4-vpc-endpoint-in-the-customer-vpc--test-for-connectivity)
 
+<br><br>
 
 ## Phase 1: Service VPC Setup
 
@@ -136,6 +150,7 @@ Result: A web server EC2 instance named Webserver1 is launched and publicly acce
 
 [ Back to Top](#-step-by-step-deployment-guide)
 
+<br><br>
 
 ---
 
@@ -206,6 +221,7 @@ Result: You’ve published an Endpoint Service backed by MyNetwork-LB, requiring
 
 [ Back to Top](#-Step-by-Step-deployment-guide)
 
+<br><br>
 
 ---
 
@@ -322,6 +338,8 @@ Result: You have created a test EC2 instance named Customer_EC2 which is now run
 
 [ Back to Top](#-Step-by-Step-deployment-guide)
 
+<br><br>
+
 ---
 
 
@@ -380,6 +398,8 @@ Result: The customer EC2 can now privately access the web server in the service 
   Result: The Customer EC2 successfully accesses the web server in the Service VPC through the VPC Endpoint — without using the public internet.
 
 [ Back to Top](#-Step-by-Step-deployment-guide)
+
+<br><br>
 
 ---
 
