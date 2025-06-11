@@ -17,9 +17,7 @@ This portfolio project demonstrates a **secure and private architecture** for ex
 - **Network Load Balancers**
 - **EC2 Instances**
 
-> Built by [Uzo Bolarinwa](https://www.linkedin.com/in/uzobolarinwa) as part of my AWS Solutions Architect portfolio.  
-> Designed to meet enterprise-grade security needs in fintech, healthcare, and SaaS environments.
-
+<br><br>
 ---
 
 ## 🔍 Use Case
@@ -49,6 +47,7 @@ This simulates what you'd deploy in **zero-trust** environments where **private 
 | Route Tables/Subnets   | Handles routing & subnet segmentation                                   |
 | Security Groups        | Restricts traffic to HTTP & SSH only                                    |
 
+<br><br>
 ---
 
 ## ⚙️ EC2 Bootstrapping
@@ -56,6 +55,7 @@ This simulates what you'd deploy in **zero-trust** environments where **private 
 At launch, the EC2 instance uses a minimal `user-data` script to install Apache and serve a static HTML page.
 
 📁 [`scripts/user_data_webserver.sh`](scripts/user_data_webserver.sh)
+<br><br>
 
 ---
 
@@ -66,6 +66,8 @@ At launch, the EC2 instance uses a minimal `user-data` script to install Apache 
 - **Explicit Access Control** — Endpoint requests must be approved by provider  
 - **Minimal Attack Surface** — Only port `80` exposed via NLB  
 - **Secure-by-Design** — No public IPs, NATs, or peering needed
+
+<br><br>
 
 ---
 
@@ -78,6 +80,7 @@ You’ll set up:
 - Customer VPC (EC2, Interface VPC Endpoint)
 - Manual endpoint approval + test with `curl`
 
+<br><br>
 ---
 
 ## 💡 Skills You’ll Practice
@@ -89,6 +92,7 @@ You’ll set up:
 - Working with Interface Endpoints & approval workflows  
 - Zero-trust networking models  
 
+<br><br>
 ---
 
 ## 🧹 Cleanup Checklist
@@ -100,6 +104,7 @@ To avoid unnecessary charges, please don’t forget to:
 - Remove NLB + target groups  
 - Delete custom VPCs and subnets  
 
+<br><br>
 ---
 
 ## 📘 Lessons Learned
