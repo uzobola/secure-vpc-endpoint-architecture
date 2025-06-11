@@ -134,7 +134,7 @@ To avoid incurring charges, be sure to:
 
 ## License
 ### Author
-**Uzo B.**
+**Uzo **
 
 ## License
 This project is licensed under the MIT License.
