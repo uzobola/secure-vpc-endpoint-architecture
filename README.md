@@ -5,136 +5,118 @@
 # 🛰️ Secure Cross-VPC Service Architecture on AWS  
 **Exposing Services Privately using Interface VPC Endpoints + NLB**
 
+[![Deployment Status](https://img.shields.io/badge/deployment-secure-brightgreen)](#)
+[![Networking Model](https://img.shields.io/badge/networking-private-orange)](#)
+[![Platform](https://img.shields.io/badge/built_on-AWS-232F3E?logo=amazon-aws&logoColor=white)](#)
+[![Architecture Type](https://img.shields.io/badge/type-B2B--SaaS-blueviolet)](#)
+[![Privacy](https://img.shields.io/badge/privacy-zero--trust-critical)](#)
 
-![Status](https://img.shields.io/badge/deployment-secure-brightgreen)
-![VPC](https://img.shields.io/badge/networking-private-orange)
-![AWS](https://img.shields.io/badge/built_on-AWS-232F3E?logo=amazon-aws&logoColor=white)
-![Architecture](https://img.shields.io/badge/type-B2B--SaaS-blueviolet)
-![Security](https://img.shields.io/badge/privacy-zero--trust-critical)
+This portfolio project demonstrates a **secure and private architecture** for exposing services across VPCs — without relying on the public internet. It simulates a real-world B2B use case using:
 
+- **Interface VPC Endpoints**
+- **Network Load Balancers**
+- **EC2 Instances**
 
-> A private service architecture that simulates secure B2B access across accounts — ideal for fintech, healthcare, or internal partner APIs.  
-> ✅ Uses **VPC Endpoints**, **NLB**, and **EC2** with minimal public exposure.  
-> ✅ Infrastructure created manually with AWS Console for demonstrative hands-on skills.
-
----
-
-## 📌 What This Project Demonstrates
--  Zero-trust exposure of internal services
--  Interface VPC Endpoints backed by NLB
--  Endpoint Service and manual approval flow
--  EC2 provisioning with Apache + user-data
--  Fully private connectivity between VPCs — no public IP required
-
-<br><br>
+> Built by [Uzo Bolarinwa](https://www.linkedin.com/in/uzobolarinwa) as part of my AWS Solutions Architect portfolio.  
+> Designed to meet enterprise-grade security needs in fintech, healthcare, and SaaS environments.
 
 ---
 
+## 🔍 Use Case
 
-## 🧭 Architecture Overview
+A **Service VPC** hosts an internal web application served by an EC2 instance. A **Customer VPC** accesses this service privately over an **Interface VPC Endpoint**, which forwards traffic to an NLB listening on port `80`.
 
-This architecture simulates a secure, zero-trust, cross-VPC connection where a **Customer VPC** connects privately to a **Service VPC** without touching the public internet.
+This simulates what you'd deploy in **zero-trust** environments where **private connectivity** is mandatory.
 
-<p align="center">
-  <img src="architecture/network-architecture-diagram.png" alt="AWS VPC Architecture Diagram" width="700"/>
-</p>
+---
 
+## 🧠 Architecture Diagram
 
 ![AWS VPC Endpoint Architecture - Dark Mode](architecture/network-architecture-diagram.png)
 
-<br><br>  
+---
+
+## 🛠️ Key AWS Services
+
+| Service                | Purpose                                                                 |
+|------------------------|--------------------------------------------------------------------------|
+| Amazon VPC             | Network isolation for Service and Customer VPCs                         |
+| EC2                    | Hosts web application and test clients                                  |
+| Internet Gateway       | For initial EC2 bootstrapping                                           |
+| Network Load Balancer  | Traffic forwarding layer for endpoint service                           |
+| Interface VPC Endpoint | Customer's private entry point to the service                           |
+| Endpoint Service       | Allows Service VPC to control & approve endpoint connections            |
+| Route Tables/Subnets   | Handles routing & subnet segmentation                                   |
+| Security Groups        | Restricts traffic to HTTP & SSH only                                    |
 
 ---
 
-##  Key AWS Services Used
+## ⚙️ EC2 Bootstrapping
 
-| Service               | Purpose                                                                |
-|-----------------------|---------------------------------------------------------------------|
-| Amazon VPC            | Isolated networks for service provider and customer                 |
-| EC2 Instances         | Hosts web application and curl-based testing                        |
-| Internet Gateway      | Provides outbound access for EC2 bootstrapping                      |
-| Network Load Balancer | Scalable, low-latency, high-throupghut traffic distribution point   |
-| Interface VPC Endpoint| Private entry point from Customer VPC to NLB                        |
-| Endpoint Service      | Enables service provider to control and approve customer access     |
-| Route Tables / Subnets| Public subnet mapping for gateway and routing                       |
-| Security Groups       | Access control (SSH, HTTP, HTTPS)                                   |
+At launch, the EC2 instance uses a minimal `user-data` script to install Apache and serve a static HTML page.
 
-<br><br>
+📁 [`scripts/user_data_webserver.sh`](scripts/user_data_webserver.sh)
 
 ---
 
-##  EC2 Bootstrapping
-  The web server in the Service VPC is launched with a minimal `user-data` script to install Apache and serve a custom HTML welcome page.
+## 🛡️ Security Highlights
 
-This is done using a lightweight user-data script at instance launch.  
-You can find the script here: [`Script`](scripts/user_data_webserver.sh)
-
----
-
-## Security Highlights
-
-This architecture emphasizes **secure-by-default** design through:
-
--  **VPC Isolation**: Service and customer workloads are deployed in fully isolated VPCs
--  **No Public Exposure**: Application traffic never leaves the AWS private space
--  **Controlled Access**: Service provider must **explicitly accept** endpoint requests
--  **Minimal Attack Surface**: Only TCP port 80 is exposed via NLB — no direct EC2 access
--  **Secure by Design**: Follows AWS best practices for private service exposure
-
-
-<br><br>
+- **VPC Isolation** — Full separation between Service and Customer VPCs  
+- **Zero Public Exposure** — Traffic stays within the AWS private network  
+- **Explicit Access Control** — Endpoint requests must be approved by provider  
+- **Minimal Attack Surface** — Only port `80` exposed via NLB  
+- **Secure-by-Design** — No public IPs, NATs, or peering needed
 
 ---
 
-## 🔧 Try It Yourself
-## 📚 Deployment & Testing
-Please see the [Deployment Guide](./deployment-guide.md) for instructions on:
-It includes:
-- Service VPC with EC2 and NLB
-- Endpoint Service setup
-- Customer VPC + Interface Endpoint
-- Manual approval and validation via curl
-  
----
+## 🚀 Try It Yourself
 
-##  Skills You'll be Demonstrating...
+📘 Follow the [Deployment Guide](deployment-guide.md) to replicate this architecture.  
+You’ll set up:
 
-- VPC design and subnet architecture  
-- Internet gateway and route table setup  
-- EC2 provisioning with user-data automation  
-- Load balancing with NLB  
-- Secure private access with Interface VPC Endpoints  
-- Service-to-service architecture patterns  
-- Zero-trust connectivity and resource teardown
+- Service VPC (EC2, NLB, Endpoint Service)
+- Customer VPC (EC2, Interface VPC Endpoint)
+- Manual endpoint approval + test with `curl`
 
 ---
 
+## 💡 Skills You’ll Practice
 
-## Cleanup Checklist
-
-To avoid incurring charges, be sure to:
-
-- Terminate all EC2 instances
-- Delete the VPC Endpoint
-- Delete the Endpoint Service
-- Delete the NLB and target group
-- Delete VPCs, Subnets, Routetables and Internet Gateways
+- Designing secure VPCs and subnets  
+- EC2 provisioning with automation  
+- NLB & Endpoint Service creation  
+- Cross-VPC communication without internet  
+- Working with Interface Endpoints & approval workflows  
+- Zero-trust networking models  
 
 ---
 
-## Lessons Learned
-- Endpoint Services offer precise control over who connects
-- Matching AZs is critical for health checks and traffic flow
-- Private networking doesn’t mean limited flexibility — just better design
+## 🧹 Cleanup Checklist
+
+To avoid unnecessary charges, please don’t forget to:
+
+- Terminate EC2 Instances  
+- Delete VPC Endpoints and Services  
+- Remove NLB + target groups  
+- Delete custom VPCs and subnets  
 
 ---
 
+## 📘 Lessons Learned
+
+- AZ alignment is essential for endpoint ↔ NLB routing  
+- Endpoint Services offer tight control and visibility  
+- Secure connectivity is not complex — just deliberate  
+
+---
+---
 
 <br><br>
 
 ## License
 ### Author
 **Uzo **
+🛠️ [Other Projects](https://github.com/uzobola?tab=repositories)
 
 ## License
 This project is licensed under the MIT License.
