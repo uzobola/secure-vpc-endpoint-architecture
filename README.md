@@ -28,9 +28,17 @@ This simulates what you'd deploy in **zero-trust** environments where **private 
 
 ---
 
-## 🧠 Architecture Diagram
+## 🧭 Architecture Overview
+
+This architecture simulates a secure, zero-trust, cross-VPC connection where a **Customer VPC** connects privately to a **Service VPC** without touching the public internet.
+
+<p align="center">
+  <img src="architecture/network-architecture-diagram.png" alt="AWS VPC Architecture Diagram" width="700"/>
+</p>
+
 
 ![AWS VPC Endpoint Architecture - Dark Mode](architecture/network-architecture-diagram.png)
+
 
 ---
 
